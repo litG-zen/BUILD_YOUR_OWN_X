@@ -117,4 +117,7 @@ func main() {
 	first_node.Traverse()
 
 	first_node.DeleteData(160896)
+
+	fmt.Println("\n\n After deletion traversal")
+	first_node.Traverse()
 }
