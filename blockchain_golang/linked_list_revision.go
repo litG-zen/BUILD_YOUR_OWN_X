@@ -82,7 +82,7 @@ func (l *LinkedNode) DeleteData(data int) {
 }
 
 func (l *LinkedNode) ReverseLinkedList() *LinkedNode {
-	// Here it's an assumption that the passed linkedlist if from the header node.
+	// Here it's an assumption that the passed linkedlist is from the header node.
 
 	var prev *LinkedNode
 	current := l
