@@ -81,11 +81,20 @@ func (l *LinkedNode) DeleteData(data int) {
 	}
 }
 
-func (l *LinkedNode) ReverseLinkedList() {
-	// Todo: reverse linked list without using a new LinkedLlist.
-	// Trying using Prev and Current pointers.
+func (l *LinkedNode) ReverseLinkedList() *LinkedNode {
+	// Here it's an assumption that the passed linkedlist if from the header node.
 
+	var prev *LinkedNode
+	current := l
+	for current != nil {
+		next := current.next
+		current.next = prev
+		prev = current
+		current = next
+	}
+	return prev
 }
+
 func main() {
 	first_node := InitNode(220396)
 	fmt.Printf("First node data :%v", first_node)
@@ -119,5 +128,10 @@ func main() {
 	first_node.DeleteData(160896)
 
 	fmt.Println("\n\n After deletion traversal")
+	first_node.Traverse()
+
+	fmt.Println("\n\n Reversing the Linkedlist")
+	first_node = first_node.ReverseLinkedList()
+	fmt.Println("After Reversal")
 	first_node.Traverse()
 }
